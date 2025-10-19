@@ -21,7 +21,7 @@
 
     .fade {
       opacity: 0;
-      transition: opacity 3.5s ease-in-out;
+      transition: opacity 3.5s ease-in-out; 
       pointer-events: none;
     }
 
@@ -47,8 +47,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      padding-top: 60px;
+      justify-content: flex-start; 
+      padding-top: 60px; 
       z-index: 9999;
       text-align: center;
     }
@@ -185,14 +185,14 @@
       font-weight: bold;
       z-index: 1000;
     }
-  </style>
 
+  </style>
 </head>
 
 <body>
 
   <div id="splash" class="fade active">
-    <img src="Mindful_Needs_Digital_Spa_Logo.png" alt="Glavni Logo">
+    <img src="Mindful_Needs_Digital_Spa_Logo.png" alt="Main Logo">
     <p class="subtitle">Mindful Needs Digital Spa</p>
     <h1>"Support and focus at your fingertips"</h1>
   </div>
@@ -245,7 +245,7 @@
       }, 3000);
     });
 
-    // Povezivanje ikona sa tačnim fajlovima
+    // ✅ Shema veza iz srpske verzije (velika slova za Hub)
     document.getElementById('open-worry').addEventListener('click', function() {
       openApp('Worry.html');
     });
@@ -263,13 +263,6 @@
     const banner = document.getElementById('a2hs-banner');
     const button = document.getElementById('a2hs-button');
 
-    // Prikaz banera odmah (kao u testu)
-    banner.style.display = 'block';
-
-    button.addEventListener('click', () => {
-      banner.style.display = 'none';
-    });
-
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
@@ -277,6 +270,7 @@
     });
 
     button.addEventListener('click', async () => {
+      banner.style.display = 'none';
       if (deferredPrompt) {
         deferredPrompt.prompt();
         const { outcome } = await deferredPrompt.userChoice;
@@ -295,4 +289,3 @@
 
 </body>
 </html>
-
